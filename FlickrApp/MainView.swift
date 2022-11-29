@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @StateObject var viewModel: MainViewViewModel
+    
+    init() {
+        let networkingService = Networking()
+       _viewModel = StateObject(wrappedValue: MainViewViewModel(networkingService: networkingService))
+    }
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")

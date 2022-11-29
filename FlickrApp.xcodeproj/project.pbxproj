@@ -10,6 +10,7 @@
 		D740948A2936701700F22234 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74094892936701700F22234 /* ImageModel.swift */; };
 		D74094902936718700F22234 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D740948F2936718700F22234 /* MainViewViewModel.swift */; };
 		D74094922936726600F22234 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74094912936726600F22234 /* Networking.swift */; };
+		D7409498293689D600F22234 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7409497293689D600F22234 /* ImageLoader.swift */; };
 		D7536CDF29366107009C23B8 /* FlickrAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7536CDE29366107009C23B8 /* FlickrAppApp.swift */; };
 		D7536CE129366107009C23B8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7536CE029366107009C23B8 /* MainView.swift */; };
 		D7536CE32936610B009C23B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7536CE22936610B009C23B8 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		D74094892936701700F22234 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		D740948F2936718700F22234 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
 		D74094912936726600F22234 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		D7409497293689D600F22234 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		D7536CDB29366107009C23B8 /* FlickrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7536CDE29366107009C23B8 /* FlickrAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrAppApp.swift; sourceTree = "<group>"; };
 		D7536CE029366107009C23B8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				D74094912936726600F22234 /* Networking.swift */,
+				D7409497293689D600F22234 /* ImageLoader.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			files = (
 				D7536CE129366107009C23B8 /* MainView.swift in Sources */,
 				D74094922936726600F22234 /* Networking.swift in Sources */,
+				D7409498293689D600F22234 /* ImageLoader.swift in Sources */,
 				D740948A2936701700F22234 /* ImageModel.swift in Sources */,
 				D74094902936718700F22234 /* MainViewViewModel.swift in Sources */,
 				D7536CDF29366107009C23B8 /* FlickrAppApp.swift in Sources */,
