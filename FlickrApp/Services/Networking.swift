@@ -1,5 +1,5 @@
 //
-//  MainViewViewModel.swift
+//  Networking.swift
 //  FlickrApp
 //
 //  Created by Миша Перевозчиков on 29.11.2022.
