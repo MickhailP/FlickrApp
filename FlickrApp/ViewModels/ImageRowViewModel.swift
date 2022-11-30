@@ -25,9 +25,12 @@ class ImageRowViewModel: ObservableObject {
         downloadImage()
     }
     
-    func downloadImage() {
+    /// Download Image data from URL from ImageModel.link
+    ///
+    /// Creates a URL request through Networking service, then creates an UIImage from received data.
+    private func downloadImage() {
         
-        guard let url = URL(string: model.media.m) else {
+        guard let url = URL(string: model.media.urlString) else {
             isLoading = false
             return
         }

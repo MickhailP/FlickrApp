@@ -26,6 +26,8 @@ struct ImageDetailView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .ignoresSafeArea()
         .overlay(alignment: .topLeading) {
+            
+            //Cross button to dismiss the View
             Button {
                 dismiss()
             } label: {

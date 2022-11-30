@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct FlickrAppApp: App {
+    let networkingService = Networking()
+    
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainView(networkingService: networkingService)
         }
     }
 }

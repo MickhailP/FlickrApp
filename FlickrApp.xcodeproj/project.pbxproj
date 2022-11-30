@@ -21,6 +21,9 @@
 		D7A82333293726D20099D36C /* ImageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A82332293726D20099D36C /* ImageRowView.swift */; };
 		D7A82335293730C70099D36C /* ImagePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A82334293730C70099D36C /* ImagePreview.swift */; };
 		D7A8233829373AC10099D36C /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A8233729373AC10099D36C /* ImageDetailView.swift */; };
+		D7A8233B293763BE0099D36C /* NetworkingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A8233A293763BE0099D36C /* NetworkingProtocol.swift */; };
+		D7A8233E293783230099D36C /* .gitignore.md in Resources */ = {isa = PBXBuildFile; fileRef = D7A8233C293783230099D36C /* .gitignore.md */; };
+		D7A8233F293783230099D36C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D7A8233D293783230099D36C /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 		D7A82332293726D20099D36C /* ImageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRowView.swift; sourceTree = "<group>"; };
 		D7A82334293730C70099D36C /* ImagePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreview.swift; sourceTree = "<group>"; };
 		D7A8233729373AC10099D36C /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
+		D7A8233A293763BE0099D36C /* NetworkingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProtocol.swift; sourceTree = "<group>"; };
+		D7A8233C293783230099D36C /* .gitignore.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = .gitignore.md; sourceTree = "<group>"; };
+		D7A8233D293783230099D36C /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,8 @@
 				D7536CDD29366107009C23B8 /* FlickrApp */,
 				D7536CEE2936610B009C23B8 /* FlickrAppTests */,
 				D7536CF82936610B009C23B8 /* FlickrAppUITests */,
+				D7A8233D293783230099D36C /* .swiftlint.yml */,
+				D7A8233C293783230099D36C /* .gitignore.md */,
 				D7536CDC29366107009C23B8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -138,6 +146,7 @@
 				D740948D2936712F00F22234 /* ViewModels */,
 				D740948C293670D600F22234 /* Model */,
 				D740948E2936713E00F22234 /* Services */,
+				D7A823392937639E0099D36C /* Protocols */,
 				D7536CE22936610B009C23B8 /* Assets.xcassets */,
 				D7536CE42936610B009C23B8 /* Preview Content */,
 			);
@@ -180,6 +189,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		D7A823392937639E0099D36C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D7A8233A293763BE0099D36C /* NetworkingProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -190,12 +207,15 @@
 				D7536CD729366107009C23B8 /* Sources */,
 				D7536CD829366107009C23B8 /* Frameworks */,
 				D7536CD929366107009C23B8 /* Resources */,
+				D7A8234529378D1B0099D36C /* SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = FlickrApp;
+			packageProductDependencies = (
+			);
 			productName = FlickrApp;
 			productReference = D7536CDB29366107009C23B8 /* FlickrApp.app */;
 			productType = "com.apple.product-type.application";
@@ -268,6 +288,8 @@
 				Base,
 			);
 			mainGroup = D7536CD229366107009C23B8;
+			packageReferences = (
+			);
 			productRefGroup = D7536CDC29366107009C23B8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -284,7 +306,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7A8233F293783230099D36C /* .swiftlint.yml in Resources */,
 				D7536CE62936610B009C23B8 /* Preview Assets.xcassets in Resources */,
+				D7A8233E293783230099D36C /* .gitignore.md in Resources */,
 				D7536CE32936610B009C23B8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +329,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D7A8234529378D1B0099D36C /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D7536CD729366107009C23B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -313,6 +359,7 @@
 				D7536CE129366107009C23B8 /* MainView.swift in Sources */,
 				D74094922936726600F22234 /* Networking.swift in Sources */,
 				D7A82335293730C70099D36C /* ImagePreview.swift in Sources */,
+				D7A8233B293763BE0099D36C /* NetworkingProtocol.swift in Sources */,
 				D7409498293689D600F22234 /* ImageRowViewModel.swift in Sources */,
 				D7A82333293726D20099D36C /* ImageRowView.swift in Sources */,
 				D740948A2936701700F22234 /* ImageModel.swift in Sources */,
