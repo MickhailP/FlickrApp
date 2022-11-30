@@ -14,6 +14,11 @@ class MainViewViewModel: ObservableObject {
     
     @Published var searchTag: String = ""
     
+    @Published private var sorter: SortType = .none
+    
+    enum SortType {
+        case none, byName, byDate
+    }
     
     let networkingService: NetworkingProtocol
     
@@ -34,16 +39,22 @@ class MainViewViewModel: ObservableObject {
         do {
             let fetchedData = try await networkingService.downloadData(from: url)
             
-            let decodedResponse = try JSONDecoder().decode(APIResponse.self, from: fetchedData)
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
             
+            let decodedResponse = try decoder.decode(APIResponse.self, from: fetchedData)
+           
             await MainActor.run(body: {
                 dataArray = decodedResponse.items
 
             })
             
         } catch  {
-            showErrorMessage = true
-            print("Error occurred during fetching data")
+            await MainActor.run(body: {
+                showErrorMessage = true
+                print(error)
+                print("Error occurred during fetching data", error.localizedDescription)
+            })
         }
        
     }
