@@ -9,23 +9,27 @@ import Foundation
 
 class MainViewViewModel: ObservableObject {
     
-    @Published var dataArray: [ImageModel] = []
-    @Published var showErrorMessage: Bool = false
+    @Published private var dataArray: [ImageModel] = []
+    @Published private(set)var showErrorMessage: Bool = false
     
     @Published var searchTag: String = ""
     
-    @Published private var sorter: SortType = .none
+    @Published var sorter: SortType = .none
     
     enum SortType {
-        case none, byName, byDate
+        case none, byName, byNewest, byOldest
     }
+    
     
     let networkingService: NetworkingProtocol
     
+    //MARK: Init
     init(networkingService: NetworkingProtocol) {
         self.networkingService = networkingService
     }
     
+    
+    //MARK: Fetching methods
     func searchImages(for tags: String) {
         if let url = networkingService.createURL(for: tags) {
             Task {
@@ -56,6 +60,35 @@ class MainViewViewModel: ObservableObject {
                 print("Error occurred during fetching data", error.localizedDescription)
             })
         }
-       
     }
+    
+    
+    //MARK: Sorting methods
+    private func sortByName(_ lhs: ImageModel, _ rhs: ImageModel) -> Bool {
+        lhs.title < rhs.title
+    }
+    private func sortByNewest(_ lhs: ImageModel, _ rhs: ImageModel) -> Bool {
+        lhs.dateTaken > rhs.dateTaken
+    }
+    private func sortByOldest(_ lhs: ImageModel, _ rhs: ImageModel) -> Bool {
+        lhs.dateTaken < rhs.dateTaken
+    }
+    
+    //MARK: Sorted dataArray
+    var sortedData: [ImageModel] {
+        switch sorter {
+            case .none:
+                return dataArray
+            case .byName:
+                return dataArray.sorted(by: sortByName)
+            
+            case .byNewest:
+                return dataArray.sorted(by: sortByNewest)
+            
+            case .byOldest:
+                return dataArray.sorted(by: sortByOldest)
+        }
+    }
+    
+    
 }

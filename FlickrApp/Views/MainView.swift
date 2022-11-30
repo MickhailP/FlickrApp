@@ -23,7 +23,7 @@ struct MainView: View {
                 .padding()
             
             ScrollView{
-                ForEach(viewModel.dataArray, id: \.self) { item in
+                ForEach(viewModel.sortedData, id: \.self) { item in
                     ImageRowView(model: item)
                 }
             }
@@ -46,15 +46,29 @@ extension MainView {
                 Image(systemName: "magnifyingglass")
             }
             
-            Button {
+            Menu {
+                Button {
+                    viewModel.sorter = .byName
+                } label: {
+                    Label("Sort by name", systemImage: "textformat.alt")
+                }
+                Button {
+                    viewModel.sorter = .byNewest
+                } label: {
+                    Label("Newest", systemImage: "arrow.up")
+                }
+                Button {
+                    viewModel.sorter = .byOldest
+                } label: {
+                    Label("Oldest", systemImage: "arrow.down")
+                }
+                
                 
             } label: {
                 Image(systemName: "arrow.up.arrow.down")
             }
-            
         }
     }
-
 }
 
 struct ContentView_Previews: PreviewProvider {

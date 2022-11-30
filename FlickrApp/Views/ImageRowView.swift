@@ -27,7 +27,7 @@ struct ImageRowView: View {
                     .font(.title3)
                 Text("Author: \(viewModel.model.author)")
             
-                Text("Published: \(viewModel.model.published)")
+                Text("Published: \(viewModel.model.dateTaken)")
                     .font(.caption)
                     
                 Text("Tags: " + "\(viewModel.model.tags.isEmpty ? "no tags" : viewModel.model.tags)")
@@ -40,7 +40,7 @@ struct ImageRowView: View {
         .padding(.horizontal)
         .padding(.vertical, 5)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .sheet(isPresented: $viewModel.showImageFullScreen) {
+        .fullScreenCover(isPresented: $viewModel.showImageFullScreen) {
             ImageDetailView(image: viewModel.image)
         }
     }
