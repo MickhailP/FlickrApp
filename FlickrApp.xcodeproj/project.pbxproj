@@ -24,6 +24,7 @@
 		D7A8233B293763BE0099D36C /* NetworkingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A8233A293763BE0099D36C /* NetworkingProtocol.swift */; };
 		D7A8233E293783230099D36C /* .gitignore.md in Resources */ = {isa = PBXBuildFile; fileRef = D7A8233C293783230099D36C /* .gitignore.md */; };
 		D7A8233F293783230099D36C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D7A8233D293783230099D36C /* .swiftlint.yml */; };
+		D7C278032937E89100DD52A8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D7C278022937E89100DD52A8 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		D7A8233A293763BE0099D36C /* NetworkingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProtocol.swift; sourceTree = "<group>"; };
 		D7A8233C293783230099D36C /* .gitignore.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = .gitignore.md; sourceTree = "<group>"; };
 		D7A8233D293783230099D36C /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		D7C278022937E89100DD52A8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				D7536CF82936610B009C23B8 /* FlickrAppUITests */,
 				D7A8233D293783230099D36C /* .swiftlint.yml */,
 				D7A8233C293783230099D36C /* .gitignore.md */,
+				D7C278022937E89100DD52A8 /* README.md */,
 				D7536CDC29366107009C23B8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			files = (
 				D7A8233F293783230099D36C /* .swiftlint.yml in Resources */,
 				D7536CE62936610B009C23B8 /* Preview Assets.xcassets in Resources */,
+				D7C278032937E89100DD52A8 /* README.md in Resources */,
 				D7A8233E293783230099D36C /* .gitignore.md in Resources */,
 				D7536CE32936610B009C23B8 /* Assets.xcassets in Resources */,
 			);
