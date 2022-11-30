@@ -8,24 +8,26 @@
 import Foundation
 import UIKit
 
-class ImageLoader: ObservableObject {
+class ImageRowViewModel: ObservableObject {
     
-    let urlString: String
+    let model: ImageModel
     
     @Published var image: UIImage?
     @Published var isLoading: Bool = true
     
+    @Published var showImageFullScreen: Bool = false
+    
     let networkingService: NetworkingProtocol
     
-    init(urlString: String, networkingService: NetworkingProtocol) {
-        self.urlString = urlString
+    init(model: ImageModel, networkingService: NetworkingProtocol) {
+        self.model = model
         self.networkingService = networkingService
         downloadImage()
     }
     
     func downloadImage() {
         
-        guard let url = URL(string: urlString) else {
+        guard let url = URL(string: model.media.m) else {
             isLoading = false
             return
         }
@@ -36,6 +38,7 @@ class ImageLoader: ObservableObject {
                 
                 await MainActor.run(body: {
                     image = UIImage(data: imageData)
+                    isLoading = false
                 })
                 
             } catch {
