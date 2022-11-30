@@ -19,14 +19,17 @@ final class Networking: NetworkingProtocol {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "www.flickr.com"
-        urlComponents.path = "services/feeds/photos_public.gne"
+        urlComponents.path = "/services/feeds/photos_public.gne"
         
         let tagsQuery = tags.lowercased().components(separatedBy: " ")
         let joined = tagsQuery.joined(separator: ",")
         
-        urlComponents.queryItems?.append(URLQueryItem(name: "tags", value: joined))
-        urlComponents.queryItems?.append(URLQueryItem(name: "format", value: "json"))
-
+        urlComponents.queryItems = [
+            URLQueryItem(name: "tags", value: joined),
+            URLQueryItem(name: "format", value: "json"),
+            URLQueryItem(name: "nojsoncallback", value: "1")
+        ]
+        
         
         guard let url = urlComponents.url else {
             print("Failed to construct URL")
@@ -38,11 +41,12 @@ final class Networking: NetworkingProtocol {
     }
     
     func downloadData(from url: URL) async throws -> Data {
-    
+        
         do {
             let (data, response) = try await URLSession.shared.data(from: url)
             try handleResponse(response)
             
+            print(data)
             return data
         } catch  {
             print("There was an error during data fetching! ", error.localizedDescription)
